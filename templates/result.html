@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Approval Prediction - Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Approval Prediction - Result</h1>
+        <div class="result">
+            {% if prediction == 1 %}
+                <h2>Congratulations!</h2>
+                <p>Your loan has been <span class="approved">APPROVED</span>.</p>
+            {% else %}
+                <h2>Sorry!</h2>
+                <p>Your loan has been <span class="rejected">REJECTED</span>.</p>
+            {% endif %}
+        </div>
+        <div class="return-button">
+            <a href="/">Go back to Loan Application</a>
+        </div>
+    </div>
+</body>
+</html>

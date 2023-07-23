@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Approval Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Approval Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br>
+
+            <label for="married">Married:</label>
+            <select name="married" id="married">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+
+            <label for="dependents">Dependents:</label>
+            <input type="number" name="dependents" id="dependents" min="0" step="1"><br>
+
+            <label for="education">Education:</label>
+            <select name="education" id="education">
+                <option value="Graduate">Graduate</option>
+                <option value="Not Graduate">Not Graduate</option>
+            </select><br>
+
+            <label for="self_employed">Self Employed:</label>
+            <select name="self_employed" id="self_employed">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+
+            <label for="applicant_income">Applicant Income:</label>
+            <input type="number" name="applicant_income" id="applicant_income" min="0" step="100"><br>
+
+            <label for="coapplicant_income">Coapplicant Income:</label>
+            <input type="number" name="coapplicant_income" id="coapplicant_income" min="0" step="100"><br>
+
+            <label for="loan_amount">Loan Amount:</label>
+            <input type="number" name="loan_amount" id="loan_amount" min="0" step="100"><br>
+
+            <label for="loan_amount_term">Loan Amount Term:</label>
+            <input type="number" name="loan_amount_term" id="loan_amount_term" min="1" step="1"><br>
+
+            <label for="credit_history">Credit History:</label>
+            <select name="credit_history" id="credit_history">
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select><br>
+
+            <label for="property_area">Property Area:</label>
+            <select name="property_area" id="property_area">
+                <option value="Urban">Urban</option>
+                <option value="Rural">Rural</option>
+                <option value="Semiurban">Semiurban</option>
+            </select><br>
+
+            <label for="loan_status">Loan Status:</label>
+            <select name="loan_status" id="loan_status">
+                <option value="0">Not Approved</option>
+                <option value="1">Approved</option>
+            </select><br>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
